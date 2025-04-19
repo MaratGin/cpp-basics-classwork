@@ -85,11 +85,24 @@ int main() {
   // копируем значения из arr_fill (c 0 по 5ый элемент не включительно) в arr_copy
   std::copy(arr_fill, arr_fill + 5, arr_copy);
 
+
+  int original[] = {10, 20, 30, 40, 50, 60};
+  const int start = 2;
+  const int count = 3;
+  
+  int dest[count];
+
+  std::copy(original + start, original + start + count, dest);
+
   return 0;
 }
 
 /*
  * Задания:
  * 1. Есть ли проблема определения размера массива?
+ * A: Да, если передать массив в функцию, то потеряется информация о его размере
  * 2. Как скопировать лишь часть массива?
+ * std::copy(original + 2, original + 2 + 3, dest); 
+ * original - изначальный массив, dest - конечный массив. Мы копируем с 3-го элемента три следующих значения
+ * 
  */
